@@ -1,9 +1,13 @@
 [build]
-builder = "shell"
+builder = "nixpacks"
+services = ["java"]
 command = "mvn -DskipTests clean package"
 
+[variables]
+JAVA_VERSION = "17"
+
 [deploy]
-start = "java -jar target/ecom-0.0.1-SNAPSHOT.jar"
+start = "java -Dserver.port=$PORT -jar target/ecom-0.0.1-SNAPSHOT.jar"
 
 [secrets]
 enabled = false
