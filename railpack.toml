@@ -1,2 +1,5 @@
 [build]
 command = "mvn -B -DskipTests clean package"
+
+[secrets]
+enabled = false
